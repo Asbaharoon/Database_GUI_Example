@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.ViewPlayersController">
+   <children>
+      <Label text="Basketball Players">
+         <font>
+            <Font name="Phosphate Inline" size="36.0" />
+         </font>
+      </Label>
+      <Line endX="700.0" stroke="#646464" strokeWidth="5.0" />
+      <HBox alignment="CENTER" prefHeight="35.0" prefWidth="200.0">
+         <children>
+            <TextField fx:id="firstNameSearch" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="First Name">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Line startY="20.0" stroke="#f2c513" strokeWidth="5.0">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Line>
+            <TextField fx:id="lastNameSearch" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="210.0" promptText="Last Name">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Line startY="20.0" stroke="#f2c513" strokeWidth="5.0">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Line>
+            <ComboBox fx:id="positionSearch" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="140.0" promptText="-- Position --">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </ComboBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="114.0" prefHeight="35.0" prefWidth="200.0">
+         <children>
+            <ComboBox fx:id="teamSearch" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="207.0" promptText="-- Team --">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </ComboBox>
+            <Line startY="20.0" stroke="#f2c513" strokeWidth="5.0">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Line>
+            <Label text="Seasons Played :">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+            <ComboBox fx:id="comparisonOperator" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="170.0" promptText="Equals">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </ComboBox>
+            <TextField fx:id="numberSeasonsPlayed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="39.0" promptText="#">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="35.0" prefWidth="200.0">
+         <children>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#search" prefHeight="25.0" prefWidth="150.0" text="Search">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Line startY="20.0" stroke="#f2c513" strokeWidth="5.0">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Line>
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#searchAll" prefHeight="25.0" prefWidth="150.0" text="View All">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </VBox.margin>
+      </HBox>
+      <Line endX="700.0" stroke="#646464" strokeWidth="5.0" />
+      <TableView fx:id="playersTable" prefHeight="500.0" prefWidth="200.0">
+        <columns>
+          <TableColumn maxWidth="250.0" minWidth="250.0" prefWidth="250.0" text="Name">
+               <columns>
+                  <TableColumn fx:id="firstNameCol" prefWidth="150.0" text="First" />
+                <TableColumn fx:id="lastNameCol" prefWidth="150.0" text="Last" />
+               </columns>
+            </TableColumn>
+            <TableColumn fx:id="positionCol" prefWidth="125.0" text="Position" />
+            <TableColumn fx:id="teamCol" prefWidth="208.0" text="Team" />
+            <TableColumn fx:id="numSeasonsCol" prefWidth="71.0" text="# Seasons" />
+        </columns>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </TableView>
+      <Line endX="700.0" stroke="#646464" strokeWidth="5.0" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button minHeight="35.0" mnemonicParsing="false" onAction="#remove" prefWidth="150.0" text="Remove Selected">
+               <HBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+            <Line startY="20.0" stroke="#f2c513" strokeWidth="5.0" />
+            <Button minHeight="35.0" mnemonicParsing="false" onAction="#edit" prefWidth="150.0" text="Edit Selected">
+               <HBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+            <Line startY="20.0" stroke="#f2c513" strokeWidth="5.0" />
+            <Button minHeight="35.0" mnemonicParsing="false" onAction="#add" prefWidth="150.0" text="+ Add New Player">
+               <HBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
